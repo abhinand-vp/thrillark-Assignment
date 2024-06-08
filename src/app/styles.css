@@ -1,6 +1,7 @@
 #app {
   height: 100%;
 }
+
 html,
 body {
   position: relative;
@@ -42,6 +43,7 @@ body {
   height: 420px;
   margin: 20px auto;
 }
+
 .append-buttons {
   text-align: center;
   margin-top: 20px;
@@ -58,7 +60,19 @@ body {
   margin: 0 10px;
   font-size: 13px;
 }
-.swiper-button-prev {
-  background-color: black !important;
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: #454545 !important;
   color: white;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  fill: #fff;
+  scale: .7;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: black;
 }

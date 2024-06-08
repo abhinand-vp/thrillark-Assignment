@@ -58,8 +58,8 @@ export default function TopDestinations() {
 
   const [hideBtn, setHideBtn] = useState(false);
   return (
-    <div className="px-[1vw] md:px-[5vw]">
-      <h1>Top Destinations</h1>
+    <div className="px-[1vw] md:px-[5vw] md:my-8">
+      <h1 className="text-black font-medium text-xl px-[2.5vw]">Top Destinations</h1>
       <div
         onMouseOver={() => setHideBtn(true)}
         onMouseOut={() => setHideBtn(false)}
@@ -73,7 +73,7 @@ export default function TopDestinations() {
           className="mySwiper"
           breakpoints={{
             320: {
-              slidesPerView: 1,
+              slidesPerView: 1.5,
               spaceBetween: 10,
             },
             640: {
@@ -96,8 +96,8 @@ export default function TopDestinations() {
                 <img src={ele.img} alt={ele.place} />
               </div>
               <div className="block py-[1vw]">
-                <div>{ele.place}</div>
-                <div className="py-[1vw]">{ele.country}</div>
+                <div className="text-base font-normal">{ele.place}</div>
+                <div className="py-2 text-sm">{ele.country}</div>
               </div>
             </SwiperSlide>
           ))}

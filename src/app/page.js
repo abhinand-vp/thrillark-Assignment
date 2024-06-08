@@ -10,13 +10,10 @@ import "swiper/css/navigation";
 import "./styles.css";
 
 // import required modules
-import { Pagination, Navigation } from "swiper/modules";
-import Trending from "./components/TopDestination";
 import Navbar from "./components/Navbar";
 import TopDestinations from "./components/TopDestination";
 import PopularExperience from "./components/PopularExperience";
-import Categories from "./components/Categories";
-import HeroImage from "./components/Heroimage";
+import HeroImage from "./components/HeroImage";
 
 export default function Home() {
   const [hideBtn, setHideBtn] = useState(false)
@@ -26,7 +23,7 @@ export default function Home() {
       <HeroImage/>
       <TopDestinations />
       <PopularExperience />
-      <Categories />
+      {/* <Categories /> */}
     </>
   );
 }
