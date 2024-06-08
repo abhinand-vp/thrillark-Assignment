@@ -11,48 +11,22 @@ import "./styles.css";
 
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
+import Trending from "./components/TopDestination";
+import Navbar from "./components/Navbar";
+import TopDestinations from "./components/TopDestination";
+import PopularExperience from "./components/PopularExperience";
+import Categories from "./components/Categories";
+import HeroImage from "./components/Heroimage";
 
 export default function Home() {
   const [hideBtn, setHideBtn] = useState(false)
   return (
-    <div
-      onMouseOver={() => setHideBtn(true)}
-      onMouseOut={() => setHideBtn(false)}
-    >
-      <Swiper
-        slidesPerView={4}
-        centeredSlides={false}
-        spaceBetween={30}
-        navigation={hideBtn}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
-        breakpoints={{
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 40,
-          },
-        }}
-      >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-      </Swiper>
-    </div>
+    <>
+      <Navbar />
+      <HeroImage/>
+      <TopDestinations />
+      <PopularExperience />
+      <Categories />
+    </>
   );
 }
