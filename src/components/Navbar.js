@@ -76,14 +76,14 @@ export default function Navbar() {
                     className="w-auto px-5 h-auto py-5 bg-white-500 absolute bg-white right-[7vw] top-10 rounded-md flex justify-start gap-16 px-5">
                     <div>
                         <p className="text-[#47c4c6] font-bold text-base py-3">Language</p>
-                        {language.map((item) => (
-                            <p className="text-md font-normal text-[#454545] cursor-pointer hover:text-[#47c4c6] py-[1px]">{item}</p>
+                        {language.map((item, idx) => (
+                            <p key={idx} className="text-md font-normal text-[#454545] cursor-pointer hover:text-[#47c4c6] py-[1px]">{item}</p>
                         ))}
                     </div>
                     <div>
                         <p className="text-[#47c4c6] font-bold text-base py-3">Currency</p>
-                        {currency.map((item) => (
-                            <p className="text-md font-normal text-[#454545] cursor-pointer hover:text-[#47c4c6] py-[1px]">{item}</p>
+                        {currency.map((item, idx) => (
+                            <p key={idx} className="text-md font-normal text-[#454545] cursor-pointer hover:text-[#47c4c6] py-[1px]">{item}</p>
 
                         ))}
                     </div>
