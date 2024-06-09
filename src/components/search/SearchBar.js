@@ -40,7 +40,7 @@ const SearchBar = (props) => {
                             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                         </svg>
                     </div>
-                    <input type="search" id="default-search" onClick={() => setShowAndHideSearchSuggestion(!showAndHideSearchSuggestion)} className={classname} placeholder={placeHolder} required onChange={(e) => handleSearch(e.target.value)} />
+                    <input type="search" id="default-search" onClick={() => setShowAndHideSearchSuggestion(!showAndHideSearchSuggestion)} className={classname} placeholder={placeHolder} required onChange={(e) => handleSearch(e)} />
                 </div>
             </form>
             {showAndHideSearchSuggestion &&
