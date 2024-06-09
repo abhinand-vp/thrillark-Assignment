@@ -50,17 +50,18 @@ export default function Navbar() {
                     <LuUser2 fontSize={32} color="#454545" />
                     <p>Account</p>
                 </div>
-
-            </div> :
+            </div> 
+            
+            :
             <>
             </>
         }
 
-            <div className="h-10 px-[6vw] bg-white flex justify-between items-center md:w-full md:h-16 md:px-[5vw]">
+            <div className="h-10 px-[6vw] bg-white flex justify-between md:items-center lg:items-stretch md:w-full md:h-16 md:px-[5vw]">
                 <img className="w-24 md:w-40 md:h-12" src="/images/logo.png" />
-                <SearchBar classname={"block w-full p-4 ps-14 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-blue-500"} placeHolder={"Search Mockups, Logos..."} />
+                <SearchBar classname={"block w-full px-4 py-3 ps-14 text-sm tracking-wide text-gray-900 border border-gray-300 rounded-md focus:ring-blue-500"} placeHolder={"Search Activities and destinations"} />
 
-                <div className="hidden md:flex justify-between gap-8 mt-4 md:text-base md:text-[#333] cursor-pointer" onMouseOut={() => setInrModal(false)}>
+                <div className="hidden md:flex justify-between gap-6 mt-4 md:text-base md:text-[#333] cursor-pointer" onMouseOut={() => setInrModal(false)}>
                     <p onMouseOver={() => setInrModal(true)}
                         onClick={() => setInrModal(!inrModal)}
                     >INR र</p>
@@ -74,7 +75,7 @@ export default function Navbar() {
             </div>
             {inrModal &&
                 <div onMouseOver={() => setInrModal(true)}
-                    className="w-auto px-5 z-10 h-auto py-5 bg-white-500 absolute bg-white right-[7vw] top-[7vh] rounded-md flex justify-start gap-16 px-5">
+                    className="w-auto px-5 z-10 h-auto py-5 bg-white-500 absolute bg-white md:right-[7vw] md:top-[5vh] lg:right-[7vw] lg:top-[5vh] xl:right-[7vw] xl:top-[5vh] rounded-md flex justify-start gap-16">
                     <div>
                         <p className="text-[#47c4c6] font-bold text-base py-3">Language</p>
                         {language.map((item, idx) => (

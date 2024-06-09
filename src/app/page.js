@@ -13,18 +13,15 @@ import "@/custom.css/styles.css";
 import HeroImage from "@/components/HeroImage";
 import TopDestinations from "@/components/TopDestination";
 import PopularExperience from "@/components/PopularExperience";
-import Navbar from "@/components/Navbar";
 
 
 export default function Home() {
   const [hideBtn, setHideBtn] = useState(false)
   return (
     <>
-      {/* <Navbar /> */}
       <HeroImage/>
       <TopDestinations />
-      <PopularExperience />
-      {/* <Categories /> */}
+      {/* <PopularExperience /> */}
     </>
   );
 }
