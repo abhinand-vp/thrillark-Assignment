@@ -59,7 +59,7 @@ export default function PopularExperience() {
   const [hideBtn, setHideBtn] = useState(false);
   return (
     <div className="px-[1vw] md:px-[5vw] md:my-8">
-      <h1 className="text-black font-medium text-xl px-[2.5vw]">Top Destinations</h1>
+      <h1 className="text-black font-medium text-xl px-[2.5vw]">Popular Destinations</h1>
       <div
         onMouseOver={() => setHideBtn(true)}
         onMouseOut={() => setHideBtn(false)}

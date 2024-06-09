@@ -1,6 +1,5 @@
 'use client'
 const SearchBar = (props) => {
-    debugger
     const { classname, placeHolder } = props
 
     return (
