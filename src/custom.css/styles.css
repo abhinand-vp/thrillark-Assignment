@@ -80,5 +80,6 @@ body {
 @media only screen and (min-device-width: 300px) and (max-device-width: 576px) {
   .swiper {
     padding: 0 10px;
+    height: 40vh;
   }
 }
