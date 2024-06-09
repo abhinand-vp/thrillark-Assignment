@@ -1,7 +1,9 @@
 'use client'
 import { useDestContext } from "@/context/destination.context"
+import { useState } from "react"
 
 const SearchBar = (props) => {
+    const [showAndHideSearchSuggestion, setShowAndHideSearchSuggestion] = useState(false)
     const { classname, placeHolder } = props
     const { topDestDetails, popularDestination, handleClear, setTopDestDetails, setPopularDestination } = useDestContext()
     const handleSearch = (e) => {
@@ -30,7 +32,7 @@ const SearchBar = (props) => {
 
     return (
         <>
-            <form className="hidden md:block md:max-w-md md:mx-auto md:w-[30vw]">
+            <form className="hidden md:block md:mx-auto md:w-[30vw] relative">
                 <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only bg-white">Search</label>
                 <div className="relative">
                     <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -38,9 +40,17 @@ const SearchBar = (props) => {
                             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                         </svg>
                     </div>
-                    <input type="search" id="default-search" className={classname} placeholder={placeHolder} required onChange={(e) => handleSearch(e)} />
+                    <input type="search" id="default-search" onClick={() => setShowAndHideSearchSuggestion(!showAndHideSearchSuggestion)} className={classname} placeholder={placeHolder} required onChange={(e) => handleSearch(e.target.value)} />
                 </div>
             </form>
+            {showAndHideSearchSuggestion &&
+                <div className="bg-white w-[30vw] border-b border-l border-r border-gray-300 z-10 h-48 absolute top-10 p-5 flex gap-x-3 gap-y-1 flex-wrap rounded-b-md">
+                    <div className="border border-gray-300 p-2 w-auto h-10 rounded-md hover:border-blue-300 hover:border-2 cursor-pointer">Dubai</div>
+                    <div className="border border-gray-300 p-2 w-auto h-10 rounded-md hover:border-blue-300 hover:border-2 cursor-pointer">Burj Khalifa</div>
+                    <div className="border border-gray-300 p-2 w-auto h-10 rounded-md hover:border-blue-300 hover:border-2 cursor-pointer">IMG Worlds of Adventure</div>
+                    <div className="border border-gray-300 p-2 w-auto h-10 rounded-md hover:border-blue-300 hover:border-2 cursor-pointer">Aquaventure Waterpark</div>
+                </div>
+            }
         </>
     )
 

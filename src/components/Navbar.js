@@ -50,8 +50,7 @@ export default function Navbar() {
                     <LuUser2 fontSize={32} color="#454545" />
                     <p>Account</p>
                 </div>
-            </div> 
-            
+            </div>
             :
             <>
             </>
@@ -59,7 +58,9 @@ export default function Navbar() {
 
             <div className="h-10 px-[6vw] bg-white flex justify-between md:items-center lg:items-stretch md:w-full md:h-16 md:px-[5vw]">
                 <img className="w-24 md:w-40 md:h-12" src="/images/logo.png" />
-                <SearchBar classname={"block w-full px-4 py-3 ps-14 text-sm tracking-wide text-gray-900 border border-gray-300 rounded-md focus:ring-blue-500"} placeHolder={"Search Activities and destinations"} />
+                <div>
+                    <SearchBar classname={"block w-full px-4 py-3 ps-14 text-sm tracking-wide text-gray-900 border border-gray-300 rounded-md focus:ring-blue-500"} placeHolder={"Search Activities and destinations"} />
+                </div>
 
                 <div className="hidden md:flex justify-between gap-6 mt-4 md:text-base md:text-[#333] cursor-pointer" onMouseOut={() => setInrModal(false)}>
                     <p onMouseOver={() => setInrModal(true)}
