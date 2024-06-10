@@ -1,19 +1,26 @@
 'use client'
 import { suggestionList } from "@/constants"
 import { useDestContext } from "@/context/destination.context"
-import React, { useState } from "react"
-import {SearchSuggestion , SearchResults} from "@/components/search"
+import React, { useRef, useState } from "react"
+import { SearchSuggestion, SearchResults } from "@/components/search"
 
 const SearchBar = (props) => {
+    const searchInputRef = useRef(null);
+    const { classname, placeHolder, serachModalWidth, from } = props
     const [showAndHideSearchSuggestion, setShowAndHideSearchSuggestion] = useState(false)
     const [isSearchHaveValue, setIsSearchHaveValue] = useState(false)
+    const [searchValue, setSearchValue] = useState('')
+    const [topDestDetails, setTopDestDetails] = useState([])
+    const { topDestination } = useDestContext()
 
-    const { classname, placeHolder, serachModalWidth } = props
-    console.log({ serachModalWidth });
-    const { topDestDetails, handleClear, setTopDestDetails, topDestination } = useDestContext()
+    const handleClear = () => {
+        setTopDestDetails(topDestination)
+    }
 
     const handleSearch = (e) => {
-        const searchKey = e.target.value.trim();
+        // for handling search value for suggestion and also from search input
+        const searchKey = typeof e?.target?.value !== 'undefined' ? e?.target?.value : e;
+        setSearchValue(searchKey)
         setIsSearchHaveValue(!!searchKey);
         // Clear previous results and filter new ones
         if (searchKey) {
@@ -43,7 +50,15 @@ const SearchBar = (props) => {
                             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                         </svg>
                     </div>
-                    <input type="search" id="default-search" onClick={() => setShowAndHideSearchSuggestion(!showAndHideSearchSuggestion)} className={classname} placeholder={placeHolder} required onChange={(e) => handleSearch(e)} />
+                    <input type="search" value={searchValue} id="default-search" onClick={() => {
+                        setShowAndHideSearchSuggestion(!showAndHideSearchSuggestion)
+                    }}
+                        className={classname}
+                        placeholder={placeHolder}
+                        required
+                        onChange={(e) => handleSearch(e)}
+                        ref={searchInputRef}
+                    />
                 </div>
             </form>
 
@@ -52,8 +67,8 @@ const SearchBar = (props) => {
                     {
                         suggestionList.map((item, idx) => {
                             return (
-                                <React.Fragment key={idx}>
-                                    <SearchSuggestion name={item} />
+                                <React.Fragment key={`${idx}-${item}`}>
+                                    <SearchSuggestion ref={searchInputRef} onClick={handleSearch} name={item} />
                                 </React.Fragment>
                             )
                         })

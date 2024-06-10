@@ -1,19 +1,8 @@
-import { popularDestinationDetails, topDestination } from "@/constants"
-import { useState } from "react"
+import { topDestination } from "@/constants"
 
 export const useDestinationDetails = () => {
-    const [topDestDetails, setTopDestDetails] = useState(topDestination)
-    const [popularDestination, setPopularDestination] = useState(popularDestinationDetails)
-    const handleClear = () =>{
-         setPopularDestination(popularDestinationDetails)
-         setTopDestDetails(topDestination)
-    }
+    // removed global topDestination becasue of the global conflict and changed these state local state is SearchBar component
     return { 
-        topDestDetails,
-        popularDestination,
-        setTopDestDetails,
-        setPopularDestination,
-        handleClear,
         topDestination
     }
 }
