@@ -62,8 +62,7 @@ export default function Navbar() {
             <div className="h-10 px-[6vw] bg-white flex justify-between items-center md:w-full md:h-16 md:px-[5vw]">
                 <img className="w-24 md:w-40 md:h-12" src="/images/logo.png" />
                 <div className="hidden md:block">
-                    <SearchBar serachModalWidth={"35vw"} classname={"block w-[35vw] px-4 py-2 xl:py-3 ps-14 text-sm tracking-wide text-gray-900 border border-gray-300 rounded-md"} placeHolder={"Search Activities and destinations"} />
-                </div>
+                <SearchBar serachModalWidth={"35vw"} classname={"block w-[95vw] md:w-[35vw] px-4 py-3 ps-14 text-sm text-gray-900 border tracking-wide border-gray-300 rounded-md bg-white focus:ring-blue-500"} placeHolder={"Search Activities and destinations"} />                </div>
 
                 <div className="hidden md:flex justify-between gap-3 xl:gap-5 md:text-base md:text-[#333] cursor-pointer" onMouseOut={() => setInrModal(false)}>
                     <p onMouseOver={() => setInrModal(true)}
