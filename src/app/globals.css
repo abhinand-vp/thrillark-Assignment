@@ -6,3 +6,6 @@
 *{
     font-family: "DM Sans", sans-serif;
 }
+textarea:focus, input:focus{
+    outline: none;
+}
