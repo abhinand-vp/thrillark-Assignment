@@ -14,7 +14,7 @@ import { Pagination, Navigation } from "swiper/modules";
 import { useDestContext } from "@/context/destination.context";
 
 export default function TopDestinations() {
-  const { topDestination } = useDestContext()
+  const { topDestDetails } = useDestContext()
 
   const [hideBtn, setHideBtn] = useState(false);
   return (
@@ -50,7 +50,7 @@ export default function TopDestinations() {
             },
           }}
         >
-          {topDestination.map((ele) => (
+          {topDestDetails.map((ele) => (
             <SwiperSlide key={ele.place}>
               <div>
                 <img src={ele.img} alt={ele.place} />

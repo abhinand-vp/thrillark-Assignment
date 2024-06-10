@@ -10,12 +10,7 @@ const SearchBar = (props) => {
     const [showAndHideSearchSuggestion, setShowAndHideSearchSuggestion] = useState(false)
     const [isSearchHaveValue, setIsSearchHaveValue] = useState(false)
     const [searchValue, setSearchValue] = useState('')
-    const [topDestDetails, setTopDestDetails] = useState([])
-    const { topDestination } = useDestContext()
-
-    const handleClear = () => {
-        setTopDestDetails(topDestination)
-    }
+    const { topDestination ,setTopDestDetails ,topDestDetails ,handleClear} = useDestContext()
 
     const handleSearch = (e) => {
         // for handling search value for suggestion and also from search input
@@ -29,7 +24,6 @@ const SearchBar = (props) => {
         } else {
             // If the search input is cleared, clear the previously filtered results
             handleClear();
-            setTopDestDetails([]);
         }
     };
     const searchForTopDestinsation = (searchKey) => {
