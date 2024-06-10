@@ -13,16 +13,13 @@ const SearchBar = (props) => {
     const { topDestination ,setTopDestDetails ,topDestDetails ,handleClear} = useDestContext()
 
     const handleSearch = (e) => {
-        // for handling search value for suggestion and also from search input
         const searchKey = typeof e?.target?.value !== 'undefined' ? e?.target?.value : e;
         setSearchValue(searchKey)
         setIsSearchHaveValue(!!searchKey);
-        // Clear previous results and filter new ones
         if (searchKey) {
             const { topDestFiltered } = searchForTopDestinsation(searchKey.toLowerCase());
             setTopDestDetails(topDestFiltered);
         } else {
-            // If the search input is cleared, clear the previously filtered results
             handleClear();
         }
     };
@@ -57,7 +54,7 @@ const SearchBar = (props) => {
             </form>
 
             {showAndHideSearchSuggestion &&
-                <div className={`bg-white w-[95vw] md:w-[${[serachModalWidth]}] border-b border-l border-r border-gray-300 z-10 h-48 absolute top-10 p-5 flex gap-x-3 flex-wrap rounded-b-md`}>
+                <div className={`bg-white w-[95vw] md:w-[${[serachModalWidth]}] border-b border-l border-r border-gray-300 z-10 h-auto absolute top-[9vw] md:top-[6.5vh] p-5 flex gap-3 flex-wrap rounded-b-md`}>
                     {
                         suggestionList.map((item, idx) => {
                             return (
@@ -70,7 +67,7 @@ const SearchBar = (props) => {
                 </div>
             }
             {isSearchHaveValue && topDestDetails.length > 0 && (
-                <div className={`bg-white w-[95vw] md:w-[${[serachModalWidth]}] border-b border-l border-r border-gray-300 z-10 h-48 absolute top-10 p-5 flex gap-x-3 flex-wrap rounded-b-md`}>
+                <div className={`bg-white w-[95vw] md:w-[${[serachModalWidth]}] border-b border-l border-r border-gray-300 z-10 h-auto my-2 bg-white absolute top-10 p-5 flex gap-x-3 flex-wrap rounded-b-md`}>
                     <SearchResults results={topDestDetails} />
                 </div>
             )
