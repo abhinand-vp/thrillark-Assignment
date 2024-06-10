@@ -13,6 +13,7 @@ export const useDestinationDetails = () => {
         popularDestination,
         setTopDestDetails,
         setPopularDestination,
-        handleClear
+        handleClear,
+        topDestination
     }
 }
