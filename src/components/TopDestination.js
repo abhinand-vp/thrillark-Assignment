@@ -19,7 +19,7 @@ export default function TopDestinations() {
   const [hideBtn, setHideBtn] = useState(false);
   return (
     <div className="px-[1vw] md:px-[3vw] lg:px-[4vw] md:my-8">
-      <h1 className="pl-4 text-xl mt-4 text-black font-medium md:mt-0 md:px-[2.5vw]">Top Destinations</h1>
+      <h1 className="pl-4 text-2xl mt-4 text-[#333] font-semibold md:pt-4 md:px-[2.5vw]">Top Destinations</h1>
       <div
         onMouseOver={() => setHideBtn(true)}
         onMouseOut={() => setHideBtn(false)}

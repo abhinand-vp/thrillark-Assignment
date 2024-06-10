@@ -76,6 +76,17 @@ body {
 .swiper-button-next:hover {
   background-color: black;
 }
+@media only screen and (min-device-width: 768px) and (max-device-width: 992px) {
+  .swiper {
+    padding: 20px;
+    margin: 10px auto;
+  }
+}
+@media only screen and (min-device-width: 576px) and (max-device-width: 768px) {
+  .swiper {
+    padding: 20px;
+  }
+}
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 576px) {
   .swiper {

@@ -59,10 +59,10 @@ export default function Navbar() {
             </>
         }
 
-            <div className="h-10 px-[6vw] bg-white flex justify-between items-center md:w-full md:h-16 md:px-[5vw]">
+            <div className="h-[7vh] px-[6vw] bg-white flex justify-between items-center md:w-full lg:h-[9vh] md:px-[5vw]">
                 <img className="w-24 md:w-40 md:h-12" src="/images/logo.png" />
                 <div className="hidden md:block">
-                <SearchBar serachModalWidth={"35vw"} classname={"block w-[95vw] md:w-[35vw] px-4 py-3 ps-14 text-sm text-gray-900 border tracking-wide border-gray-300 rounded-md bg-white focus:ring-blue-500"} placeHolder={"Search Activities and destinations"} />                </div>
+                <SearchBar serachModalWidth={"30vw"} classname={"block w-[95vw] md:w-[30vw] px-4 py-3 ps-14 text-sm text-gray-900 border tracking-wide border-gray-300 rounded-md bg-white focus:ring-blue-500"} placeHolder={"Search Activities and destinations"} />                </div>
 
                 <div className="hidden md:flex justify-between gap-3 xl:gap-5 md:text-base md:text-[#333] cursor-pointer" onMouseOut={() => setInrModal(false)}>
                     <p onMouseOver={() => setInrModal(true)}
@@ -78,7 +78,7 @@ export default function Navbar() {
             </div>
             {inrModal &&
                 <div onMouseOver={() => setInrModal(true)}
-                    className="w-auto px-5 z-10 h-auto py-5 bg-white-500 absolute bg-white md:right-[7vw] md:top-[5vh] lg:right-[7vw] lg:top-[5vh] xl:right-[7vw] xl:top-[5vh] rounded-md flex justify-start gap-16">
+                    className="w-auto px-5 z-10 h-auto py-5 bg-white-500 absolute bg-white md:right-[7vw] md:top-[6vh] lg:right-[7vw] lg:top-[6vh] xl:right-[7vw] xl:top-[6vh] rounded-md flex justify-start gap-16">
                     <div>
                         <p className="text-[#47c4c6] font-bold text-base py-3">Language</p>
                         {language.map((item, idx) => (
