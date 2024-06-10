@@ -6,6 +6,7 @@ import { TbCategory } from "react-icons/tb";
 import { PiCity } from "react-icons/pi";
 import { CiSearch } from "react-icons/ci";
 import { LuUser2 } from "react-icons/lu";
+import { HiOutlineQuestionMarkCircle } from "react-icons/hi2";
 
 export default function Navbar() {
     const language = ["arabic", "English", "Deutsch", "Francais", "Italiano", "Espanol", "Turkish", "Chinese"]
@@ -28,27 +29,29 @@ export default function Navbar() {
 
     return (
         <>{screenSize < 500 ?
-            <div className="fixed bottom-0 w-full h-15 bg-white border-t-2 flex justify-between items-center px-5 py-2 z-10">
-                <div className="text-[#87CEEB]">
-                    <RiHomeLine fontSize={32} />
-                    <p>Home</p>
-                </div>
-                <div className="flex flex-col items-center">
-                    <TbCategory fontSize={32} color="#454545" />
-                    <p>Categories</p>
-                </div>
-                <div className="flex flex-col items-center">
-                    <PiCity fontSize={32} color="#454545" />
-                    <p>Citys</p>
-                </div>
-                <div className="flex flex-col items-center">
-                    <CiSearch fontSize={32} color="#454545" />
-                    <p>Search</p>
-                </div>
-                <div className="flex flex-col items-center">
+            <div className="relative">
+                <div className="fixed bottom-0 w-full h-15 bg-white border-t-2 flex justify-between items-center px-5 py-2 z-10">
+                    <div className="text-[#87CEEB]">
+                        <RiHomeLine fontSize={32} />
+                        <p>Home</p>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <TbCategory fontSize={32} color="#454545" />
+                        <p>Categories</p>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <PiCity fontSize={32} color="#454545" />
+                        <p>Citys</p>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <CiSearch fontSize={32} color="#454545" />
+                        <p>Search</p>
+                    </div>
+                    <div className="flex flex-col items-center">
 
-                    <LuUser2 fontSize={32} color="#454545" />
-                    <p>Account</p>
+                        <LuUser2 fontSize={32} color="#454545" />
+                        <p>Account</p>
+                    </div>
                 </div>
             </div>
             :
@@ -56,13 +59,13 @@ export default function Navbar() {
             </>
         }
 
-            <div className="h-10 px-[6vw] bg-white flex justify-between md:items-center lg:items-stretch md:w-full md:h-16 md:px-[5vw]">
+            <div className="h-10 px-[6vw] bg-white flex justify-between items-center md:w-full md:h-16 md:px-[5vw]">
                 <img className="w-24 md:w-40 md:h-12" src="/images/logo.png" />
-                <div>
-                    <SearchBar classname={"block w-full px-4 py-3 ps-14 text-sm tracking-wide text-gray-900 border border-gray-300 rounded-md focus:ring-blue-500"} placeHolder={"Search Activities and destinations"} />
+                <div className="hidden md:block">
+                    <SearchBar serachModalWidth={"35vw"} classname={"block w-[35vw] px-4 py-2 xl:py-3 ps-14 text-sm tracking-wide text-gray-900 border border-gray-300 rounded-md"} placeHolder={"Search Activities and destinations"} />
                 </div>
 
-                <div className="hidden md:flex justify-between gap-6 mt-4 md:text-base md:text-[#333] cursor-pointer" onMouseOut={() => setInrModal(false)}>
+                <div className="hidden md:flex justify-between gap-3 xl:gap-5 md:text-base md:text-[#333] cursor-pointer" onMouseOut={() => setInrModal(false)}>
                     <p onMouseOver={() => setInrModal(true)}
                         onClick={() => setInrModal(!inrModal)}
                     >INR र</p>
@@ -70,8 +73,8 @@ export default function Navbar() {
                     <p>Sign</p>
                 </div>
                 <div className="flex justify-start gap-3 mt-1 md:hidden">
-                    <p>AED</p>
-                    <p>?</p>
+                    <p className="text-base text-[#454545]">AED</p>
+                    <HiOutlineQuestionMarkCircle fontSize={20} color="#454545" />
                 </div>
             </div>
             {inrModal &&
